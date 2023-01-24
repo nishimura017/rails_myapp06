@@ -1,0 +1,31 @@
+<h3>スケジュール詳細</h3>
+
+<table>
+  <tr>
+    <th>title</th>
+    <td><%= @task.title %></td>
+  </tr>
+  <tr>
+    <th>開始日</th>
+    <td><%= @task.start_day.strftime('%y/%m/%d') %></td>
+  </tr>
+  <tr>
+    <th>終了日</th>
+    <td><%= @task.end_day.strftime('%y/%m/%d') %></td>
+  </tr>
+  <tr>
+    <th>終日</th>
+		<td><% if @task.all_day ==true %>
+		○
+		<% else @task.all_day == false %><% end %></td>
+  </tr>
+	<tr>
+		<th>スケジュールメモ</th>
+		<td><%= @task.memo %></td>
+	</tr>
+</table>
+
+<div>
+	<%= link_to "ユーザー情報一覧に戻る", :tasks %>
+	<%= link_to "編集", [:edit, @task] %>
+</div>
